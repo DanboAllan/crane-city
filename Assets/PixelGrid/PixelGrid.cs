@@ -57,8 +57,8 @@ namespace PixelGridSpace
 		void DestroyGridDisplay()
 		{	
 			transform.localScale = Vector2.zero;
-			if(renderer != null)
-				this.renderer.enabled = false;
+			if(GetComponent<Renderer>() != null)
+				this.GetComponent<Renderer>().enabled = false;
 		}
 
 
@@ -68,8 +68,8 @@ namespace PixelGridSpace
 			transform.position = new Vector3(0,0,transform.position.z) ;
 			transform.localScale = GridSize * 2 * gridGameObjectSizeMultiplier_;
 
-			if(renderer != null && renderer.sharedMaterial != null)
-				renderer.sharedMaterial.SetTextureScale("_MainTex", textureScale_);
+			if(GetComponent<Renderer>() != null && GetComponent<Renderer>().sharedMaterial != null)
+				GetComponent<Renderer>().sharedMaterial.SetTextureScale("_MainTex", textureScale_);
 		}
 
 

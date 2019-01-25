@@ -42,10 +42,10 @@ namespace PixelGridSpace
 		
 		Bounds GetBounds()
 		{
-			if(objectToSnap_.renderer == null)
+			if(objectToSnap_.GetComponent<Renderer>() == null)
 				return CreateBoundsFromTransform();
 			else
-				return objectToSnap_.renderer.bounds;
+				return objectToSnap_.GetComponent<Renderer>().bounds;
 		}
 		
 		
